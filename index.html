@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat | Teams</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+
+<body>
+    <div class="navbar">
+        <span class="navigation-icon">
+            <span class="material-icons">
+                keyboard_arrow_left
+            </span>
+            <span class="material-icons">
+                keyboard_arrow_right
+            </span>
+        </span>
+        <div class="search-box">
+            <input type="text" name="search" id="search" placeholder="search here" />
+            <div class="search-suggestion"></div>
+        </div>
+        
+    </div>
+    <div class="flex-container">
+        <div class="menubar">
+            <div class="menu-icons">
+                <ul>
+                    <li>
+                        <div class="material-icons">
+                            notifications
+                        </div>
+                        <div>
+                            <a href="#">Activity</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="material-icons">
+                            sms
+                        </div>
+                        <div>
+                            <a href="#">Chat</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="material-icons">
+                            groups
+                        </div>
+                        <div>
+                            <a href="#">Teams</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="material-icons">
+                            calendar_today
+                        </div>
+                        <div>
+                            <a href="#">Calander</a>
+                        </div>
+                    </li>
+                   
+                    
+                    <li class="extra-icon">
+                        <div class="material-icons">
+                            call
+                        </div>
+                        <div>
+                            <a href="#">Call</a>
+                        </div>
+                    </li>
+                    <li class="extra-icon">
+                        <div class="material-icons">
+                            description
+                        </div>
+                        <div>
+                            <a href="#">Files</a>
+                        </div>
+                    </li>
+                    <li class="more-icons">
+                        <div class="material-icons">
+                            more_horiz
+                        </div>
+                        <div>
+                            <a href="#"></a>
+                        </div>
+                    </li>
+                    <li class="help">
+                        <div class="material-icons">
+                            help
+                        </div>
+                        <div>
+                            <a href="#">Help</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat-list">
+                <div class="chat-filter">
+                    <div class="menu-top-section">
+                        <span class="chat">
+                            <a href="#">Chat</a>
+                        </span>
+                        <a href ="https://teams.live.com/meet/9598390156545"><button ng-if="leftRailHeader.canShowNewMeetingButton &amp;&amp; !leftRailHeader.showFilterInput" ng-click="leftRailHeader.handleNewMeetingButtonClick($event)" type="button" class="left-rail-header-button ts-btn ts-btn-fluent ts-btn-fluent-with-icon ts-btn-fluent-secondary" ng-class="{'pressed': leftRailHeader.isNewMeetingPressed()}" title="New Meeting" aria-label="New Meeting" analytics-panel-view="{panel: {type:393}}" track-gesture="" track-outcome="15" track-scenario="1528" track-scenario-type="31" track-name="825" track-type="50" track-panel-type="2" data-tid="lr-create-meeting">
+                            <!----><ng-include class="icon" src="'svg/icons-call-meetup-line.html'"><svg role="presentation" viewBox="-6 -6 32 32" class="app-svg icons-call-meetup-line"><g class="icons-default-fill"><path class="icons-unfilled" d="M4.5 4C3.11929 4 2 5.11929 2 6.5V13.5C2 14.8807 3.11929 16 4.5 16H11.5C12.8807 16 14 14.8807 14 13.5V12.5L16.4 14.3C17.0592 14.7944 18 14.324 18 13.5V6.49998C18 5.67594 17.0592 5.20556 16.4 5.69998L14 7.49998V6.5C14 5.11929 12.8807 4 11.5 4H4.5ZM14 8.74998L17 6.49998V13.5L14 11.25V8.74998ZM13 6.5V13.5C13 14.3284 12.3284 15 11.5 15H4.5C3.67157 15 3 14.3284 3 13.5V6.5C3 5.67157 3.67157 5 4.5 5H11.5C12.3284 5 13 5.67157 13 6.5Z"></path><path class="icons-filled" d="M13 6.5C13 5.11929 11.8807 4 10.5 4H4.5C3.11929 4 2 5.11929 2 6.5V13.5C2 14.8807 3.11929 16 4.5 16H10.5C11.8807 16 13 14.8807 13 13.5V6.5ZM14 7.93082V12.0815L16.7642 14.4319C17.2512 14.8461 18 14.4999 18 13.8606V6.19315C18 5.55685 17.2575 5.20962 16.7692 5.61756L14 7.93082Z"></path></g></svg></ng-include>
+                    </a></button>
+                        <span class="material-icons filter-icon">
+                            filter_alt
+                        </span>
+                    </div>
+                    <div class="filter__section">
+                        <input type="text" placeholder="Filter by name" id="filter-chat" />
+                        <span class="filter__icns">
+                            <span class="material-icons">
+                                more_horiz
+                            </span>
+                            <span class="material-icons">
+                                close
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="chat-body">
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Preetam</span>
+                                <span class="day">Mon</span>
+                            </div>
+                        </div>
+                        </div>
+                   
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Prakash</span>
+                                <span class="day">Mon</span>
+                        </div>
+                          </div>  
+                        </div>
+                    
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Kiranpp</span>
+                                <span class="day">Mon</span>
+                            </div>  
+                        </div>
+                   </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Sanday</span>
+                                <span class="day">Mon</span>
+                            </div>
+                        </div></div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Sanday</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            </div>
+                        </div>
+                   
+                   
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Seema</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            </div>
+                        </div>
+                   
+                    
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Jay k j</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            </div>
+                       
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Aish</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Naga</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Dibya</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Nirakara</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Ram</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Sanjay</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Sunit</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Harish</span>
+                                <span class="day">Mon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-chat">
+                        <span class="material-icons" title="Add People">
+                            group_add
+                        </span>
+                        <div class="usr-card">
+                            <div class="username">
+                                <span class="name">Sneha</span>
+                                <span class="day">Mon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="user-detail-section">
+                <span class="material-icons" title="Add People">
+                    group_add
+                </span>
+                <div class="username">
+                    Lesson Learn
+                </div>
+                <div class="extras">
+                </div>
+                <div class="calling-options">
+                    <span class="material-icons" title="Audio call">
+                        call
+                    </span>
+                    <span class="material-icons" title="Video call">
+                        videocam
+                    </span>
+                    <span class="material-icons" title="Screen Sharing">
+                        present_to_all
+                    </span>
+                    <span class="material-icons" title="Add People">
+                        group_add
+                    </span>
+                </div>
+            </div>
+            <div class="user-chat-section">
+                <div class="message-container">
+                    <div class="message-sent">
+                        <div class="timestamp">
+                            7:21 PM</div>
+                        <div class="actual-message">
+                            This message has been
+                            sent</div>
+                    </div>
+                    <div class="message-received">
+                        <div class="sender-details">
+                            <span class="sender-name">Sneha</span>
+                            <span class="timestamp">7:22 PM</span>
+                        </div>
+                        <div class="actual-message">
+                            This message has been
+                            received</div>
+                    </div>
+                    <div class="message-sent">
+                        <div class="timestamp">
+                            7:25 PM</div>
+                        <div class="actual-message">
+                            This message has been
+                            sent</div>
+                    </div>
+                    <div class="message-received">
+                        <div class="sender-details">
+                            <span class="sender-name">Sneha</span>
+                            <span class="timestamp"> 7:28 PM</span>
+                        </div>
+                        <div class="actual-message">
+                            This message has been
+                            received</div>
+                    </div>
+                    <div class="message-received">
+                        <div class="sender-details">
+                            <span class="sender-name">Sneha</span>
+                            <span class="timestamp"> 7:29 PM</span>
+                        </div>
+                        <div class="actual-message">
+                            This message has been
+                            received</div>
+                    </div>
+                    <div class="message-received">
+                        <div class="sender-details">
+                            <span class="sender-name">sneha</span>
+                            <span class="timestamp"> 7:31 PM</span>
+                        </div>
+                        <div class="actual-message">
+                            This message has been
+                            received</div>
+                    </div>
+                    <div class="message-sent">
+                        <div class="timestamp">
+                            7:21 PM</div>
+                        <div class="actual-message">
+                            This message has been
+                            sent</div>
+                    </div>
+                    <div class="message-received">
+                        <div class="sender-details">
+                            <span class="sender-name">Sneha</span>
+                            <span class="timestamp"> 7:21 PM</span>
+                        </div>
+                        <div class="actual-message">
+                            This message has been
+                            received</div>
+                    </div>
+                    <div class="message-sent">
+                        <div class="timestamp">
+                            7:21 PM</div>
+                        <div class="actual-message">
+                            This message has been
+                            sent</div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-compose-section">
+                <input type="text" name="sendMessage" id="sendMessage" placeholder="Type a new message"
+                    autocomplete="off" />
+
+                <div class="message-options">
+                    <span class="material-icons" title="Priority">
+                        priority_high
+                    </span>
+                    <span class="material-icons" title="attach files">
+                        attach_file
+                    </span>
+                    <span class="material-icons" title="schedule meeting">
+                        today
+                    </span>
+                    <span class="material-icons" title="notes">
+                        notes
+                    </span>
+                    <span class="material-icons" title="add task">
+                        add_task
+                    </span>
+                    <span class="material-icons" title="praise">
+                        emoji_objects
+                    </span>
+                    <span class="material-icons send__message" title="Send message">
+                        send
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
